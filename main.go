@@ -1,8 +1,13 @@
 package main
 
-import "vimMaze/maze"
+import (
+	"os"
+	"vimMaze/tui"
+)
 
 func main() {
-	iMap := maze.GenerateMaze(20)
-	maze.MapDisplay(iMap)
+	err := tui.StartTUI()
+	if err != nil {
+		os.Exit(1)
+	}
 }

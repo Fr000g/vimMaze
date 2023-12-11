@@ -1,7 +1,6 @@
 package maze
 
 import (
-	"fmt"
 	"math/rand"
 )
 
@@ -10,9 +9,8 @@ const (
 	path
 	person
 	end
+	key
 )
-
-type Maze [][]int
 
 func GenerateMaze(length int) (pureMap Maze) {
 	odd := 0
@@ -58,22 +56,5 @@ func GenerateMaze(length int) (pureMap Maze) {
 
 	iMap[1][1] = person
 	iMap[odd-2][odd-2] = end
-	return iMap
-}
-
-func MapDisplay(maze [][]int) {
-	for _, valueRow := range maze {
-		for _, valuePoint := range valueRow {
-			if valuePoint == wall {
-				fmt.Print("##")
-			} else if valuePoint == path {
-				fmt.Print("  ")
-			} else if valuePoint == person {
-				fmt.Print("🧑")
-			} else if valuePoint == end {
-				fmt.Print("💰")
-			}
-		}
-		fmt.Println()
-	}
+	return Maze{iMap, false, 1, 1}
 }
