@@ -2,7 +2,6 @@ package tui
 
 import (
 	"strings"
-	"time"
 	"vimMaze/maze"
 
 	tea "github.com/charmbracelet/bubbletea"
@@ -19,8 +18,6 @@ const (
 
 var helpStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#626262")).Render
 var brickStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#B6482F")).Render
-
-type tickMsg time.Time
 
 type model struct {
 	Maze maze.Maze
@@ -59,12 +56,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, cmd
 }
 
-// View renders the program's UI, which is just a string. The view is
-// rendered after every Update.
 func (m model) View() string {
 	if m.Maze.Win == true {
-		// build.WriteString("\n\n" +
-		// 	"  " + helpStyle("Press ctrl+c to exit"))
 		return "You win!🎉" + "\n\n  " + helpStyle("Press ctrl+c to exit")
 	}
 	var build strings.Builder
