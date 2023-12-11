@@ -72,8 +72,6 @@ func (m model) View() string {
 
 			} else if valuePoint == end {
 				build.WriteString("💰")
-			} else if valuePoint == key {
-				build.WriteString("🔑")
 			}
 
 		}

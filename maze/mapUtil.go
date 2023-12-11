@@ -43,7 +43,7 @@ func (m *Maze) Goright() {
 		m.y++
 		m.Map[m.x][m.y] = person
 	} else if m.Map[m.x][m.y+1] == end {
-		fmt.Println("You win!")
+		m.Win = true
 	}
 }
 
