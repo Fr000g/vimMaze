@@ -1,4 +1,4 @@
 # vim_maze
 
-使用BubbleTea实现的简易迷宫
+A simple maze implemented in [BubbleTea](https://github.com/charmbracelet/bubbletea)
 
